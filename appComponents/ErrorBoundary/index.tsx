@@ -1,5 +1,5 @@
 import {Component, ErrorInfo} from 'react'
-import styles from '@styles/pages/error.module.scss'
+import styles from '@styles/pages/Error.module.scss'
 import MainLayout from '@layouts/Main'
 
 
