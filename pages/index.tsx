@@ -32,7 +32,7 @@ const Home: NextPage<MainPageProps> = (props) => {
     return (
         <MainLayout
             title={process.env.APPLICATION_TITLE}
-            description={'Full-stack developer | Node.js, Next.js, ReactJS, TypeScript'}
+            description={'Hardworking and passionate full-stack developer | Node.js, Next.js, ReactJS, TypeScript'}
             imagePreview={heroImage}
             combinedClassName={styles.main}
             pictures={allSkillImages}
