@@ -6,10 +6,10 @@ import {SliceName} from '@slices'
 
 
 type Returned = {
-    setError: (error: ErrorType | null) => void
-    setNotice: (notice: string) => void
-    error: ErrorType | null
-    notice: string
+    // setError: (error: ErrorType | null) => void
+    // setNotice: (notice: string) => void
+    // error: ErrorType | null
+    // notice: string
 }
 
 export default function useWarningHandlers(slice: SliceName): Returned {
@@ -28,10 +28,10 @@ export default function useWarningHandlers(slice: SliceName): Returned {
 
     //@ts-ignore
     return {
-        //@ts-ignore
-        setError: (error: ErrorType | null) => dispatch(slices[`${slice}Slice`].actions.setError(error)),
-        //@ts-ignore
-        setNotice: (notice: string) => dispatch(slices[`${slice}Slice`].actions.setNotice(notice)),
-        ...useAppSelector(state => state[`${slice}Reducer` as SliceName])
+        // //@ts-ignore
+        // setError: (error: ErrorType | null) => dispatch(slices[`${slice}Slice`].actions.setError(error)),
+        // //@ts-ignore
+        // setNotice: (notice: string) => dispatch(slices[`${slice}Slice`].actions.setNotice(notice)),
+        // ...useAppSelector(state => state[slice as SliceName])
     }
 }
