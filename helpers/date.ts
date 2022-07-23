@@ -22,5 +22,5 @@ export function getAge(birthDate: string | null): number | null {
 
     const [year, month, date] = birthDate.split('-').map(el => +el)
 
-    return Math.floor(todayData.year - year - (todayData.month - month) / 12 - (todayData.date - date) / 365.25)
+    return Math.floor(todayData.year - year + (todayData.month - month) / 12 + (todayData.date - date) / 365.25)
 }
