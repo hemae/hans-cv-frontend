@@ -69,7 +69,7 @@ export default function useMouseTouchEvents(options: Options): Returned {
     const [downX, setDownX] = useState<number | null>(null)
     const [downY, setDownY] = useState<number | null>(null)
 
-    const {touchableDevice} = useAppSelector(state => state.settingsReducer)
+    const {touchableDevice} = useAppSelector(state => state.settings)
 
     const downHandler = useCallback((event: MouseEvent | TouchEvent, callback?: () => void): void => {
         setActive(true)

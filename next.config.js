@@ -7,9 +7,10 @@ const host = process.env.NODE_ENV === 'production' ? process.env.BACKEND_API_PRO
 const nextConfig = {
   reactStrictMode: true,
   env: {
+    FRONTEND_DOMAIN: process.env.FRONTEND_DOMAIN,
     BACKEND_API: host,
     API_VERSION: process.env.API_VERSION,
-    APPLICATION_TITLE: 'Andrey Arkhipov CV'
+    APPLICATION_TITLE: 'Arkhipov Andrei CV'
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'assets')],

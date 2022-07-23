@@ -3,13 +3,15 @@
 
 
 .modal {
+  position: relative;
   width: max-content;
   height: max-content;
   background: $white;
-  box-shadow: 0px 9px 20px rgba(0, 0, 0, 0.15);
+  box-shadow: 0px 9px 20px rgba(0, 0, 0, 0.15), inset 0 0 5px rgba($primary, 0.5);
 
   max-height: 100vh;
   overflow-y: auto;
+  overflow-x: hidden;
 
   -ms-overflow-style: none;
   scrollbar-width: none;
@@ -17,5 +19,10 @@
   &::-webkit-scrollbar {
     width: 0;
     height: 0;
+  }
+
+  @media screen and (min-width: $tablet) {
+    max-height: calc(100vh - 40px);
+    border-radius: 16px;
   }
 }

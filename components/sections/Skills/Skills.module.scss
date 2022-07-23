@@ -1,0 +1,44 @@
+@import "styles/colors";
+@import "styles/screens";
+
+
+.main {
+
+  > div {
+    width: 100%;
+
+    > h2 {
+      margin-bottom: 30px;
+    }
+
+    > *:not(h2){
+      display: flex;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
+      margin-left: 20px;
+
+      > h3 {
+        width: 100%;
+        text-align: left;
+        margin-bottom: 20px;
+      }
+
+      > *:not(h3) {
+        margin: 5px;
+      }
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+
+    @media screen and (min-width: $tablet) {
+      width: 600px;
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 1000px;
+      max-width: unset;
+    }
+  }
+}

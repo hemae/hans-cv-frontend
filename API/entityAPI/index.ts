@@ -10,7 +10,6 @@ export type EntityApiOptionsType = {
     basePath?: BasePaths
     id?: UniqueId
     token?: string | null
-    locale?: string
     query?: string
     data?: Record<string, any>
 }
@@ -26,22 +25,20 @@ type Options = {
 
 function entityAPI<Entity, Data = {data: Record<string, any>}>({basePath, baseURL, notStringify, cacheControl}: Options = {}) {
     return {
-        getEntities({query, locale, token}: EntityApiOptionsType = {}) {
+        getEntities({query, token}: EntityApiOptionsType = {}) {
             return api.getPromiseResponse<EntityResponsePayload<FullResponse<Entity>>>({
                 baseURL,
                 basePath,
                 token,
-                locale,
                 path: query || '',
                 method: 'get'
             })
         },
-        getEntity({query, id, token, locale}: EntityApiOptionsType = {}) {
+        getEntity({query, id, token}: EntityApiOptionsType = {}) {
             return api.getPromiseResponse<EntityResponsePayload<{data: Entity}>>({
                 baseURL,
                 basePath,
                 token,
-                locale,
                 path: `/${id}${query || ''}`,
                 method: 'get'
             })

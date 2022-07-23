@@ -25,7 +25,7 @@ export default function useAuthForm(options: Options): Returned {
         onSubmit
     } = options
 
-    const {isAuthLoading} = useAppSelector(state => state.authReducer)
+    const {isAuthLoading} = useAppSelector(state => state.auth)
 
     const [username, setUsername] = useState<string>('')
     const [password, setPassword] = useState<string>('')

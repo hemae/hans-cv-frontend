@@ -14,7 +14,7 @@ export const Footer = memo<FooterProps>((props) => {
         <footer
             className={styles.main}
         >
-            Footer
+            <p>{process.env.APPLICATION_TITLE}, {new Date().getFullYear()}</p>
         </footer>
     )
 })

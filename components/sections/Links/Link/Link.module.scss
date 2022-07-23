@@ -1,0 +1,38 @@
+@import "styles/colors";
+@import "styles/screens";
+@import "styles/UI/interactiveElement";
+
+
+.main {
+  text-decoration: none;
+  background-color: $white;
+  box-shadow: 0 0 4px 2px $black;
+  border-radius: 16px;
+  transition: all 200ms;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  @include interactive;
+  @include box-shadow;
+  @include scale;
+
+  &:hover {
+    box-shadow: 0 0 4px 2px $primary;
+  }
+
+  > div {
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    > img {
+      width: 100%;
+    }
+  }
+
+  > p {
+    cursor: pointer;
+    color: $black;
+  }
+}

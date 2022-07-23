@@ -1,0 +1,79 @@
+@import "styles/screens";
+@import "styles/colors";
+@import "styles/UI/interactiveElement";
+
+
+.main {
+  padding: 20px 20px 70px 20px;
+  width: calc(100vw - 20px * 2);
+
+  display: flex;
+  flex-direction: column;
+
+  > h2 {
+    margin-bottom: 30px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  &__image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 300ms;
+    @include scale;
+
+    &.scale {
+      transform: scale(0.9);
+    }
+
+    > img {
+      width: 100%;
+    }
+  }
+
+  &__description {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex: 1;
+    margin-left: 20px;
+
+    > * {
+      margin-bottom: 16px;
+    }
+
+    > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    border-radius: 16px;
+    padding: 15px 30px;
+    width: calc(700px - 30px * 2);
+    max-width: calc(100vw - 30px * 2 - 30px * 2);
+
+    &__description {
+      width: 400px;
+      margin-left: 0;
+      flex: unset;
+    }
+  }
+
+  @media screen and (min-width: $desktop) {
+    padding: 20px 40px;
+    width: calc(800px - 40px * 2);
+    max-width: calc(100vw - 40px * 2 - 40px * 2);
+
+    &__description {
+      width: 500px;
+    }
+  }
+}

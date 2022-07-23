@@ -1,9 +1,27 @@
 export type BasePathsKeys =
-    'test'
+    'sections'
+    | 'educations'
+    | 'experiences'
+    | 'languages'
+    | 'links'
+    | 'projects'
+    | 'skills'
 
 export type BasePaths =
-    '/test'
+    '/sections'
+    | '/educations'
+    | '/experiences'
+    | '/languages'
+    | '/links'
+    | '/projects'
+    | '/skills'
 
 export default {
-    test: '/test'
+    sections: '/sections',
+    educations: '/educations',
+    experiences: '/experiences',
+    languages: '/languages',
+    links: '/links',
+    skills: '/skills',
+    projects: '/projects'
 } as Record<BasePathsKeys, BasePaths>

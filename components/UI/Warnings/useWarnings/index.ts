@@ -1,5 +1,5 @@
 import {useEffect, useState} from 'react'
-import {ErrorType} from '@apiModels/error'
+import {ErrorType} from '@apiModels/common'
 
 
 type Options = {

@@ -1,0 +1,63 @@
+@import "styles/colors";
+@import "styles/screens";
+
+
+.main {
+
+  margin: 10px 0;
+
+  display: flex;
+  align-items: center;
+
+  color: $black;
+  transition: all 200ms;
+  width: max-content;
+
+  &:hover {
+    opacity: 0.7;
+    text-decoration: none;
+
+    > div {
+      transform: scale(0.8);
+    }
+  }
+
+  > div {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 20px;
+    transition: all 200ms;
+    overflow: hidden;
+
+    &.email {
+      > svg {
+        fill: $primary;
+      }
+    }
+
+    &.phoneNumber {
+      > svg {
+        fill: $primary;
+      }
+    }
+
+    &.location {
+      width: 20px;
+      height: 40px;
+      margin-left: 2px;
+      > svg {
+        fill: $primary;
+      }
+    }
+
+    &.telegram {
+
+      > img {
+        width: 100%;
+      }
+    }
+  }
+}

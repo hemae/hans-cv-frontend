@@ -2,7 +2,7 @@ import {memo} from 'react'
 import styles from './Warnings.module.scss'
 import classNames from 'classnames'
 import useWarnings from '@components/UI/Warnings/useWarnings'
-import {ErrorType} from '@apiModels/error'
+import {ErrorType} from '@apiModels/common'
 
 
 type WarningsProps = {

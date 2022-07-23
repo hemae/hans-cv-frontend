@@ -3,8 +3,7 @@
 
 
 .main {
-  background-color: #ffffff;
-  color: #000000;
+  color: $black;
   height: 80px;
   position: fixed;
   display: flex;
@@ -15,9 +14,8 @@
   right: 0;
   opacity: 1;
   transition: all 200ms;
-  padding: 0 30px;
+  padding: 0 20px;
   z-index: 2;
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 
   &.hidden {
     top: -60px;
@@ -35,6 +33,36 @@
       > * {
         opacity: 1;
       }
+    }
+  }
+
+  > div {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    max-width: 1170px;
+  }
+
+  &__icon {
+    width: 30px;
+    padding: 10px;
+    background-color: rgba($white, 0.7);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 200ms;
+    margin-left: 20px;
+
+    &:hover {
+      transform: scale(0.97);
+    }
+
+    &:active {
+      transform: scale(0.95);
+    }
+
+    > img {
+      width: 100%;
     }
   }
 }

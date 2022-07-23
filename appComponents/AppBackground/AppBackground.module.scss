@@ -1,0 +1,33 @@
+@import "styles/colors";
+@import "styles/screens";
+@import "styles/UI/common";
+
+
+.background {
+  @include fullSizeElement2(0, 0);
+  width: 100vw;
+  height: 100vh;
+  position: fixed!important;
+  background-repeat: repeat;
+}
+
+.pale {
+  @include fullSizeElement2(0, 0);
+  background-color: rgba($primary-light, 1);
+  width: 100vw;
+  height: 100vh;
+  background-size: 100%;
+  position: fixed!important;
+  opacity: 0.97;
+}
+
+.main {
+
+  opacity: 0;
+  overflow: hidden;
+  transition: opacity 10s;
+
+  &.shown {
+    opacity: 0.6;
+  }
+}

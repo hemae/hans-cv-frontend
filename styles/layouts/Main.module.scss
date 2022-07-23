@@ -1,23 +1,57 @@
 @import "styles/colors";
 @import "styles/screens";
+@import "styles/UI/common";
 
 
 .main {
-  background-color: $white;
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: auto;
+  padding: 80px 0 120px 0;
+  position: relative;
 
-  > section {
-    padding: 100px 0;
-    max-width: $max-section-width;
+  > aside {
+    @include fullSizeElement(0, 0, 0, 0);
+    position: fixed;
   }
 
-  > section:nth-child(1) {
-    padding-top: 0;
+  > *:not(aside) {
+    position: relative;
   }
 
-  > section:last-child {
-    padding-bottom: 120px;
+  > section:not(section[id="background"], section[id="pale"]) {
+    width: calc(100% - 20px * 2);
+    max-width: 350px;
+    display: flex;
+    justify-content: center;
+    background-color: rgba($white, 0.8);
+    padding: 20px 20px;
+    margin-bottom: 50px;
+    > * {
+      width: 100%;
+    }
+
+    @media screen and (min-width: $tablet) {
+      margin-bottom: 80px;
+      width: calc(100% - 15px * 2);
+      max-width: 800px;
+      padding: 30px 15px;
+      > * {
+        width: 600px;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: calc(100% - 20px * 2);
+      max-width: 1170px;
+      padding: 40px 20px;
+      > * {
+        //max-width: $max-section-content-width;
+        width: $max-section-content-width;
+      }
+    }
   }
 }

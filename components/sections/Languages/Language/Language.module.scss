@@ -1,0 +1,50 @@
+@import "styles/colors";
+@import "styles/screens";
+@import "styles/UI/interactiveElement";
+
+
+.main {
+  background-color: $white;
+  border-radius: 16px;
+  transition: all 200ms;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 20px;
+  @include box-shadow;
+
+  &:hover {
+    box-shadow: 0 0 8px 3px $primary;
+  }
+
+  &__image {
+    width: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+
+    > img {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: 120px;
+    margin-left: 20px;
+    > p {
+      color: $black;
+      margin-bottom: 20px;
+    }
+    > p:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  @media screen and (min-width: $tablet) {
+    &__info {
+      width: unset;
+      max-width: 300px;
+    }
+  }
+}

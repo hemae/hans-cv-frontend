@@ -1,0 +1,15 @@
+@import "styles/colors";
+@import "styles/screens";
+
+
+.main {
+
+  position: absolute;
+  width: 32px;
+  transition: all 20s;
+  filter: opacity(60%);
+
+  > img {
+    width: 100%;
+  }
+}

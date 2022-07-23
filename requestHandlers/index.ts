@@ -7,7 +7,6 @@ import {FullResponse} from '@apiModels/meta'
 type Options = {
     entity: BasePathsKeys
     token?: string | null
-    locale?: string
     query?: string
 }
 
@@ -39,7 +38,6 @@ const handlers = {
         const {
             entity,
             token,
-            locale,
             query,
             isPagination,
             whole = false
@@ -48,19 +46,18 @@ const handlers = {
         try {
             if (!whole) {
                 const response = await getAPI<Entity>(entity, token)
-                    .getEntities({token, query, locale})
+                    .getEntities({token, query})
                 return isPagination ? response.data as FullResponse<Entity> : response.data.data as Entity[]
             } else {
                 let entities: Entity[] = []
                 const firstResponse = await getAPI<Entity>(entity, token)
-                    .getEntities({token, query, locale})
+                    .getEntities({token, query})
                 entities = firstResponse.data.data
                 for (let page = 2; page <= firstResponse.data.meta.pageCount; page++) {
                     const response = await getAPI<Entity>(entity, token)
                         .getEntities({
                             token,
-                            query: (query || '') + (query ? '&' : '?') + `page=${page}&pageSize=${firstResponse.data.meta.pageSize}`,
-                            locale
+                            query: (query || '') + (query ? '&' : '?') + `page=${page}&pageSize=${firstResponse.data.meta.pageSize}`
                         })
                     entities = entities.concat(response.data.data)
                 }
@@ -75,14 +72,13 @@ const handlers = {
         const {
             id,
             entity,
-            locale,
             token,
             query
         } = options
 
         try {
             const response = await getAPI<Entity>(entity, token)
-                .getEntity({token, locale, id, query})
+                .getEntity({token, id, query})
             return response.data.data
         } catch (e) {
             throw e

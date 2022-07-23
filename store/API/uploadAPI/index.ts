@@ -6,9 +6,10 @@ export type UploadResponse = {data: {imageLinks: string[]}}
 
 export type UploadApiOptions = {
     isRussian?: boolean
-    data: UploadPayload
+    data?: UploadPayload
     chunkName: string
     target?: string
+    token?: string | null
 }
 
 const apiApplication = new AxiosApi({
@@ -23,7 +24,7 @@ const api = new AxiosApi({
 const getUploadAPI = () => ({
     upload({data, chunkName}: UploadApiOptions) {
         const formData = new FormData()
-        data.files!.forEach(file => formData.append(`images`, file))
+        data!.files!.forEach(file => formData.append(`images`, file))
         return apiApplication.getPromiseResponse<UploadResponse>({
             method: 'post',
             path: `/${chunkName}`,
@@ -36,7 +37,20 @@ const getUploadAPI = () => ({
             path: `/delete/${chunkName}`,
             data
         })
+    },
+    getAllImages({chunkName, token}: UploadApiOptions) {
+        return api.getPromiseResponse<{data: string[]}>({
+            method: 'get',
+            path: `/all/images/${chunkName}`,
+            //@ts-ignore
+            baseURL: (!!token || token === null) && process.env.BACKEND_API,
+            token
+        })
     }
 })
+
+export async function getAllImagesHandler(chunkName: string, token?: string | null): Promise<string[]> {
+    return (await getUploadAPI().getAllImages({chunkName, token})).data.data
+}
 
 export default getUploadAPI

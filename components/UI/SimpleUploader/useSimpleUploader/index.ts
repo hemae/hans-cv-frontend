@@ -35,7 +35,7 @@ export default function useSimpleUploader(options: Options): Returned {
     const uploaderInput = useRef<HTMLInputElement>(null)
     const [files, setFiles] = useState<Array<File>>([])
     const [images, setImages] = useState<Array<ImageFileType>>([])
-    const {notice} = useAppSelector(state => state.uploadReducer)
+    const {notice} = useAppSelector(state => state.upload)
     const dispatch = useAppDispatch()
 
     useEffect(() => {

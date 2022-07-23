@@ -1,8 +1,8 @@
 import {useAppDispatch, useAppSelector} from '@store'
-import {SliceName} from '@store'
 import {slices} from '@store'
 import {useState} from 'react'
-import {ErrorType} from '@apiModels/error'
+import {ErrorType} from '@apiModels/common'
+import {SliceName} from '@slices'
 
 
 type Returned = {
@@ -32,6 +32,6 @@ export default function useWarningHandlers(slice: SliceName): Returned {
         setError: (error: ErrorType | null) => dispatch(slices[`${slice}Slice`].actions.setError(error)),
         //@ts-ignore
         setNotice: (notice: string) => dispatch(slices[`${slice}Slice`].actions.setNotice(notice)),
-        ...useAppSelector(state => state[`${slice}Reducer`])
+        ...useAppSelector(state => state[`${slice}Reducer` as SliceName])
     }
 }

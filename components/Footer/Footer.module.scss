@@ -3,7 +3,11 @@
 
 
 .main {
-  background-color: $true-black;
-  color: $white;
+  color: $black;
   position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  opacity: 0.6;
 }

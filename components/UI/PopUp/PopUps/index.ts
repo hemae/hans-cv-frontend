@@ -1,10 +1,16 @@
-import {Test} from './Test'
+import {Project} from './Project'
 import {FC} from 'react'
+import {Experience} from '@UI/PopUp/PopUps/Experience'
+import {Education} from '@UI/PopUp/PopUps/Education'
 
 
 export type PopUpType =
-    'Test'
+    'Project'
+    | 'Experience'
+    | 'Education'
 
 export default {
-    Test
+    Project,
+    Experience,
+    Education
 } as Record<PopUpType, FC>

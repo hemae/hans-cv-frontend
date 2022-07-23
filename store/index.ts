@@ -2,7 +2,14 @@ import {combineReducers, configureStore} from '@reduxjs/toolkit'
 
 // reducers
 import {
-    testSlice,
+    sectionsSlice,
+    educationsSlice,
+    experiencesSlice,
+    skillsSlice,
+    linksSlice,
+    projectsSlice,
+    languagesSlice,
+
     authSlice,
     uploadSlice,
 
@@ -17,7 +24,14 @@ import {TypedUseSelectorHook, useDispatch, useSelector} from 'react-redux'
 
 
 const reducer = combineReducers({
-    test: testSlice.reducer,
+    sections: sectionsSlice.reducer,
+    educations: educationsSlice.reducer,
+    experiences: experiencesSlice.reducer,
+    skills: skillsSlice.reducer,
+    links: linksSlice.reducer,
+    projects: projectsSlice.reducer,
+    languages: languagesSlice.reducer,
+
     auth: authSlice.reducer,
     upload: uploadSlice.reducer,
 
@@ -40,7 +54,13 @@ export type Dispatch = typeof store.dispatch
 export const wrapper = createWrapper<Store>(setupStore)
 
 export const slices = {
-    testSlice,
+    sectionsSlice,
+    educationsSlice,
+    experiencesSlice,
+    skillsSlice,
+    linksSlice,
+    projectsSlice,
+    languagesSlice,
     authSlice,
     uploadSlice,
 

@@ -1,12 +1,5 @@
-const getFullTime = (date: Date) => ({
-    year: date.getFullYear(),
-    month: date.getMonth() + 1,
-    date: date.getDate(),
-    hour: date.getHours(),
-    minute: date.getMinutes(),
-    second: date.getSeconds(),
-    time: date.getTime()
-})
+import {getFullTime} from '@helpers/date'
+
 
 type Options = { date: string, withTime: boolean }
 

@@ -1,7 +1,7 @@
 import {useEffect, useState} from 'react'
 import {useAppDispatch} from '@store'
 import {setAlert} from '@slices/alert'
-import {Alert} from '@slices/alert/models'
+import {Alert} from '@slices/alert/types'
 
 
 type Options = {

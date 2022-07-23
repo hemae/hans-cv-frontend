@@ -114,6 +114,9 @@
       ],
       "@userAgent": [
         "userAgent/index"
+      ],
+      "@fakeData/*": [
+        "fakeData/*"
       ]
     }
   },

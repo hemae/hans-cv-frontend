@@ -1,0 +1,51 @@
+@import "styles/colors";
+@import "styles/screens";
+
+
+.main {
+
+  padding-bottom: 10px!important;
+
+  > div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+
+    > h2 {
+      width: 100%;
+      text-align: left;
+      margin-bottom: 30px;
+    }
+
+    > *:not(h2) {
+      width: calc(100% - 20px * 2);
+      margin-bottom: 10px;
+    }
+
+    @media screen and (min-width: $tablet) {
+      width: 600px;
+
+      > *:not(h2) {
+        margin-right: 20px;
+        width: calc((600px - 20px) / 2 - 20px * 2);
+        margin-bottom: 20px;
+      }
+      > *:not(h2):nth-child(2n + 1) {
+        margin-right: 0;
+      }
+    }
+
+    @media screen and (min-width: $desktop) {
+      width: 1000px;
+      max-width: unset;
+      > *:not(h2) {
+        margin-right: 30px;
+        width: calc((1000px - 30px) / 2 - 20px * 2);
+        margin-bottom: 30px;
+      }
+      > *:not(h2):nth-child(2n + 1) {
+        margin-right: 0;
+      }
+    }
+  }
+}

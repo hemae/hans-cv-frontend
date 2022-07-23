@@ -2,7 +2,7 @@ import {FC, memo} from 'react'
 import styles from '@styles/layouts/Main.module.scss'
 import {Footer, Header} from '@components'
 // import {Script} from '@apiModels/layouts/scripts'
-import {HeadComponent} from '@appComponents'
+import {AppBackground, HeadComponent} from '@appComponents'
 import classNames from 'classnames'
 // import {Layouts} from '@apiModels/layouts'
 
@@ -16,6 +16,7 @@ type MainLayoutProps = {
     children: JSX.Element[] | JSX.Element | string
     className?: string
     combinedClassName?: string
+    pictures?: string[]
 }
 
 const MainLayout: FC<MainLayoutProps> = (props) => {
@@ -27,7 +28,8 @@ const MainLayout: FC<MainLayoutProps> = (props) => {
         description,
         className,
         combinedClassName,
-        imagePreview
+        imagePreview,
+        pictures
     } = props
 
 
@@ -57,11 +59,16 @@ const MainLayout: FC<MainLayoutProps> = (props) => {
                 imagePreview={imagePreview}
             />
             <Header/>
-            <main className={
-                combinedClassName
-                    ? classNames(styles.main, combinedClassName)
-                    : className || styles.main
-            }>{children}</main>
+            <main
+                className={
+                    combinedClassName
+                        ? classNames(styles.main, combinedClassName)
+                        : className || styles.main
+                }
+            >
+                {pictures && <AppBackground pictures={pictures}/>}
+                {children}
+            </main>
             <Footer/>
         </>
     )
