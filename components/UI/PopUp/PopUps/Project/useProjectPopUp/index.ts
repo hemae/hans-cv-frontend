@@ -17,7 +17,8 @@ export default function useTestPopUp(): Returned {
         descriptionPreview,
         image,
         src,
-        paragraphs
+        paragraphs,
+        type
     } = project.data
 
     const [imageScale, setImageScale] = useState<boolean>(false)
@@ -36,6 +37,7 @@ export default function useTestPopUp(): Returned {
         image,
         imageScale,
         src,
-        paragraphs
+        paragraphs,
+        type
     }
 }

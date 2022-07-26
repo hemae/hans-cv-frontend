@@ -20,5 +20,6 @@ export type Project = Entity<{
     descriptionPreview: string
     image: string | null
     src: string
+    type: 'Solo' | 'Team'
     paragraphs: Record<ProjectParagraph, Info<string>> & {stack: Info<string[]> & {pictures: string[]}}
 }>

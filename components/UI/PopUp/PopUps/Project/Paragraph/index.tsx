@@ -8,11 +8,12 @@ import {LinkItem} from '@UI'
 
 
 type ParagraphProps = {
+    type?: 'Solo' | 'Team'
     name: ProjectParagraph
     paragraph: Info<string | string[]>
 }
 
-export const Paragraph = memo<ParagraphProps>(({name, paragraph}) => {
+export const Paragraph = memo<ParagraphProps>(({name, paragraph, type}) => {
 
     const {
         title,
@@ -57,7 +58,7 @@ export const Paragraph = memo<ParagraphProps>(({name, paragraph}) => {
         else return (
                 <>
                     <h3>{title}:</h3>
-                    <LinkMarkdown isNewWindow>{content}</LinkMarkdown>
+                    <LinkMarkdown isNewWindow>{`${content} ${type ? '(' + type + ')' : ''}`}</LinkMarkdown>
                 </>
             )
     }, [content, name])

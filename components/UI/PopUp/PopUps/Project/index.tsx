@@ -14,6 +14,7 @@ export const Project: FC = () => {
         descriptionPreview,
         image,
         imageScale,
+        type,
         src,
         paragraphs
     } = useProjectPopUp()
@@ -22,9 +23,11 @@ export const Project: FC = () => {
         return Object
             .keys(paragraphs)
             .map(key => {
+                if (key === 'position') console.log(type)
                 return (
                     <Paragraph
                         key={key}
+                        type={key === 'position' ? type : undefined}
                         name={key as ProjectParagraph}
                         paragraph={paragraphs[key as ProjectParagraph]}
                     />

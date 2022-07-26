@@ -6,10 +6,12 @@ import {ExperienceType} from '@apiModels/sections/experience'
 import {SkillsType} from '@apiModels/sections/skills'
 import {EducationsType} from '@apiModels/sections/educatons'
 import {LanguagesType} from '@apiModels/sections/languages'
+import {DescriptionType} from '@apiModels/sections/description'
 
 
 export type SectionName =
     'Hero'
+    | 'Description'
     | 'Links'
     | 'Projects'
     | 'Experience'
@@ -19,6 +21,7 @@ export type SectionName =
 
 export type SectionType =
     HeroType
+    | DescriptionType
     | LinksType
     | ProjectsType
     | ExperienceType

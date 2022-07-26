@@ -10,7 +10,7 @@ const nextConfig = {
     FRONTEND_DOMAIN: process.env.FRONTEND_DOMAIN,
     BACKEND_API: host,
     API_VERSION: process.env.API_VERSION,
-    APPLICATION_TITLE: 'Arkhipov Andrei CV'
+    APPLICATION_TITLE: 'Arkhipov Andrey CV'
   },
   sassOptions: {
     includePaths: [path.join(__dirname, 'assets')],

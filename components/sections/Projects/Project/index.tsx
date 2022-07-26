@@ -19,6 +19,7 @@ export const Project = memo<ProjectProps>(({project}) => {
         title,
         descriptionPreview,
         image,
+        type,
         paragraphs
     } = project.data
 
@@ -49,7 +50,7 @@ export const Project = memo<ProjectProps>(({project}) => {
             <div
                 className={styles.main__info}
             >
-                <h3>{title}</h3>
+                <h3>{title} ({type})</h3>
                 <p>{descriptionPreview}</p>
                 <div>{images}</div>
             </div>

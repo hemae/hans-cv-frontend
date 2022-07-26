@@ -45,7 +45,7 @@ export const Skills = memo<SkillsProps>(({section}) => {
                     <div
                         key={key}
                     >
-                        <h3>{upperCase(key)}</h3>
+                        <h3>{upperCase(key === 'tool' ? 'tools' : key)}</h3>
                         {skillItems}
                     </div>
                 )

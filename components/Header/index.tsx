@@ -31,7 +31,7 @@ export const Header = memo<HeaderProps>((props) => {
             <div>
                 <a
                     className={styles.main__icon}
-                    href='/Arkhipov_Andrei_CV.pdf'
+                    href='/Arkhipov_Andrey_CV.pdf'
                     target='_blank'
                 ><img src='/pdf.png' alt='pdf-icon'/></a>
                 <div
