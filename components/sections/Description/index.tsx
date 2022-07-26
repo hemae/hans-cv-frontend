@@ -2,7 +2,6 @@ import {memo} from 'react'
 import {Section} from '@apiModels/sections'
 import {DescriptionType} from '@apiModels/sections/description'
 import useAdditionalAttributes from '@hooks/useAdditionalAttributes'
-import Markdown from 'react-markdown'
 import styles from './Description.module.scss'
 
 
@@ -26,6 +25,6 @@ export const Description = memo<Props>(({section}) => {
             id={id}
             ref={root}
             className={styles.main}
-        ><Markdown>{description}</Markdown></section>
+        ><p>{description}</p></section>
     )
 })
