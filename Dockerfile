@@ -1,6 +1,5 @@
 FROM node:16.15.0
 
-RUN mkdir /hans-cv-frontend
 
 WORKDIR /usr/hans-cv-frontend
 

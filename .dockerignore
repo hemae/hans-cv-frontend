@@ -1,6 +1,7 @@
 .git/
 .gitignore
 .next/
+.idea/
 .dockerignore
 Dockerfile
 docker-compose.yml

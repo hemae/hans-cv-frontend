@@ -7,3 +7,20 @@ services:
     build: ./nginx
     ports:
       - 80:80
+#      - 443:443
+#  certbot:
+#    image: certbot/certbot
+#    depends_on:
+#      - nginx
+#    container_name: certbot
+#    volumes:
+#      - etc-letsencrypt:/usr/letsencrypt
+#    command: certonly --webroot --webroot-path=/usr/hans-cv-frontend/.next --email hemae2468@gmail.com --agree-tos --no-eff-email --standing -d localhost
+#
+#volumes:
+#  etc-letsencrypt:
+
+networks:
+  default:
+    external:
+      name: hans-cv
