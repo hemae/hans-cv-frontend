@@ -7,18 +7,18 @@ services:
     build: ./nginx
     ports:
       - 80:80
-#      - 443:443
-#  certbot:
-#    image: certbot/certbot
-#    depends_on:
-#      - nginx
-#    container_name: certbot
-#    volumes:
-#      - etc-letsencrypt:/usr/letsencrypt
-#    command: certonly --webroot --webroot-path=/usr/hans-cv-frontend/.next --email hemae2468@gmail.com --agree-tos --no-eff-email --standing -d localhost
-#
-#volumes:
-#  etc-letsencrypt:
+      - 443:443
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+  certbot:
+      container_name: certbot
+      image: certbot/certbot
+      restart: unless-stopped
+      entrypoint:  "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+      volumes:
+        - ./data/certbot/conf:/etc/letsencrypt
+        - ./data/certbot/www:/var/www/certbot
 
 networks:
   default:
