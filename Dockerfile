@@ -1,8 +1,5 @@
 FROM node:16.15.0
 
-
-WORKDIR /usr/hans-cv-frontend
-
 COPY ./package*.json ./
 
 RUN yarn install
